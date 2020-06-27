@@ -52,7 +52,7 @@ public class ExerciciosMatriz {
 		
 		
 		
-		
+		System.out.println("Teste");
 		
 		
 		sc.close();
