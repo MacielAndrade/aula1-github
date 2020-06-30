@@ -70,16 +70,16 @@ public class Trabalhador {
 		contratos.remove(contrato);
 	}
 	
-	public double renda (int year, int month) {
+	public double rendaMensal (int year, int month) {
 		double soma = salarioBase;
 		Calendar cal = Calendar.getInstance();
 		
-		for(ContratoHora c : contratos) {
-			cal.setTime(c.getData());
-			int c_year = cal.get(Calendar.YEAR);
-			int c_month = 1 + cal.get(Calendar.MONTH);
-			if (year == c_year && month == c_month) {
-				soma += c.valorTotal();
+		for(ContratoHora cadacont : contratos) {
+			cal.setTime(cadacont.getData());
+			int cadacont_year = cal.get(Calendar.YEAR);
+			int cadacont_month = 1 + cal.get(Calendar.MONTH);
+			if (year == cadacont_year && month == cadacont_month) {
+				soma += cadacont.valorTotal();
 			}
 		}
 		return soma;

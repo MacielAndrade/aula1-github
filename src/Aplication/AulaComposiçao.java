@@ -48,20 +48,21 @@ public class AulaComposiçao {
 			System.out.print("Quantidade de Horas trabalhada: ");
 			int horas = sc.nextInt();
 			
-			ContratoHora contratos = new ContratoHora(datacontrato, valorhora, horas);
-			trabalhador.adicionarContrato(contratos);
+			ContratoHora contrato = new ContratoHora(datacontrato, valorhora, horas);
+			trabalhador.adicionarContrato(contrato);
 		}
 		
 		System.out.println();
 		System.out.print("Digite MM/AAAA para calcular o salario: ");
 		String mesEano = sc.next();
-		int mes = Integer.parseInt(mesEano.substring(0, 2));
-		int ano = Integer.parseInt(mesEano.substring(3,7));
+		int month = Integer.parseInt(mesEano.substring(0, 2));
+		int year = Integer.parseInt(mesEano.substring(3,7));
 		
 		System.out.println();
 		System.out.println("Nome: "+ trabalhador.getNome());
 		System.out.println("Departamento: "+ trabalhador.getDepartamento().getNomeDep());
-		System.out.println("Salario de  "+ mesEano + ": " + String.format("%.2f",trabalhador.renda(mes, ano)));
+		System.out.println("Salario de  "+ mesEano + ": "+
+				String.format("%.2f",trabalhador.rendaMensal(year, month)));
 		
 		
 		
